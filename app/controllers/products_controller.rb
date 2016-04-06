@@ -24,15 +24,16 @@ class ProductsController < ApplicationController
 
   def update
     @product.update_attributes(product_params)
-    binding.pry
     if @product.save
-      render json: {message: I18n.t('product.update.success'), status: 201}
+      render json: {message: I18n.t('product.update.success'), status: 200}
     else
       render json: {message: I18n.t('product.update.error'), status: 500}
     end
   end
 
   def destroy
+    @product.destroy
+    render json: {message: I18n.t('product.destroy'), status: 200}
   end
 
   private

@@ -27,6 +27,7 @@ product {
     border-color: #61388E;
     color: #61388E;
   }
+  .modal-footer & { margin-top: 0; }
 }
 
 .control-button {
@@ -40,3 +41,28 @@ product {
 .page-select {
   padding-top: 2em;
 }
+
+.ng-dirty.ng-invalid {
+  border-color: #EA5164;
+  // border-color: #FA787E;
+}
+
+.ng-dirty.ng-valid {
+  border-color: #518B51;
+}
+
+.form-horizontal .control-label:after {
+  content: " *";
+  color: red;
+}
+
+.message-block {
+  display: block;
+  color: #EA5164;
+  margin-left: 8.3em;
+  margin-top: 2.8em;
+  margin-bottom: -.9em;
+}
+
+
+

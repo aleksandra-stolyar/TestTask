@@ -25,6 +25,7 @@
     "font-awesome": "fontawesome#^4.5.0",
     "angular-xeditable": "^0.1.11",
     "lodash": "^4.8.0",
-    "angularUtils-pagination": "angular-utils-pagination#^0.11.1"
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "angular-messages": "^1.5.3"
   }
 }

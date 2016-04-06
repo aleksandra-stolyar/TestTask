@@ -3,24 +3,36 @@
     <h3 class="modal-title">Product: {{product.name}}</h3>
   </div>
 
-  <form class="form-horizontal" ng-submit="ok(product)">
+  <form class="form-horizontal" name="productForm" novalidate ng-submit="productForm.$valid && ok(product)">
     <div class="modal-body">
       <div class="form-group">
         <label class="control-label col-md-2" for="inputName">Name</label>
         <div class="col-md-10">
-          <input class="form-control" id="inputName" type="text" placeholder="Name" autofocus ng-model="product.name"></input>
+          <input class="form-control" id="inputName" name="inputName" type="text" placeholder="Name" autofocus maxlength="255" required ng-model="product.name"></input>
+        </div>
+        <div class="message-block" ng-messages="productForm.inputName.$error" ng-show="productForm.inputName.$touched" role="alert">
+          <p ng-message="required">Please enter product name.</p>
+          <p ng-message="maxlength">Name can be at most 255 characters long.</p>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-md-2" for="inputPrice">Price</label>
         <div class="col-md-3">
-          <input class="form-control currency" id="inputPrice" type="number" value="100" min="0" step="0.01" ng-model="product.price"></input>
+          <input class="form-control currency" id="inputPrice" name="inputPrice" type="number" value="100" min="0" step="0.01" pattern="\d+(\.\d{2})?" ng-keypress="isNumberKey($event)" required ng-model="product.price"></input>
+        </div>
+        <div class="message-block" ng-messages="productForm.inputName.$error" ng-show="productForm.inputPrice.$touched" role="alert">
+          <p ng-message="required">Product must have a price.</p>
+          <p ng-message="maxlength">This field can be at most 255 characters long.</p>
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-md-2" for="inputDetails">Details</label>
         <div class="col-md-10">
-          <textarea class="form-control" id="inputDetails" rows="5" placeholder="Something about this product..." ng-model="product.details"></textarea>
+          <textarea class="form-control" id="inputDetails" name="inputDetails" rows="3" placeholder="Something about this product..." maxlength="1000" required ng-model="product.details"></textarea>
+        </div>
+        <div class="message-block" ng-messages="productForm.inputName.$error" ng-show="productForm.inputDetails.$touched" role="alert">
+          <p ng-message="required">Please give some details about this product.</p>
+          <p ng-message="maxlength">Description can be at most 1000 characters long.</p>
         </div>
       </div>
     </div>

@@ -19,14 +19,14 @@
       </button>
     </div>
     <div class="col-md-2 page-select">
-      <select class="form-control" id="sel1" ng-model="productsCtrl.selected" ng-options="item for item in productsCtrl.itemsPerPage">
+      <select class="form-control" id="sel1" ng-model="productsCtrl.itemsPerPage" ng-options="item for item in productsCtrl.itemsPerPage">
         <option value="">-- items per page --</option>
       </select>
     </div>
   </div>
 
   <div class="row">
-    <div dir-paginate="product in productsCtrl.products | itemsPerPage : productsCtrl.selected | filter:created_at:desc" total-items="productsCtrl.totalProductCount" current-page="pagination.current" class="col-md-10 col-md-offset-1">
+    <div dir-paginate="product in productsCtrl.products | itemsPerPage : productsCtrl.itemsPerPage | filter:created_at:desc" total-items="productsCtrl.totalProductCount" current-page="pagination.current" class="col-md-10 col-md-offset-1">
       <product></product>
     </div>
   </div>

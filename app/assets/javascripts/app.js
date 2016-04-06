@@ -5,6 +5,7 @@ var app = angular.module("spaTask", [
   'ui.bootstrap',
   'xeditable',
   'angularUtils.directives.dirPagination',
+  'ngMessages',
   'Devise'
 ]);
 

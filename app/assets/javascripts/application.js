@@ -20,6 +20,7 @@
 //= require angular-xeditable
 //= require lodash/dist/lodash.core.min.js
 //= require angularUtils-pagination
+//= require angular-messages/angular-messages.min.js
 //= require AngularDevise
 
 //= require_tree .

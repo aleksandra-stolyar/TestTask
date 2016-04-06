@@ -25,7 +25,6 @@ app.service('ProductsService', ['$http', function($http) {
   };
 
   products.update = function(product) {
-    debugger
     return $http.patch('/products/' + product.id, {"name": product.name, "price": product.price, "details": product.details})
   };
 
