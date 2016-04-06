@@ -1,0 +1,42 @@
+$fa-font-path: "font-awesome/fonts";
+
+@import "font-awesome/scss/font-awesome.scss";
+
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #9A59BA;
+}
+
+product {
+  display: block;
+  /* background-color: #F7FFFB; */
+  margin-top: 1em;
+  margin-bottom: 0;
+  padding: .7em;
+  border-radius: .3em;
+  border: .1em solid #9A59BA;
+}
+
+.btn.add-product {
+  background-color: #61388E;
+  border-color: #61388E;
+  color: #ffffff;
+  margin-top: 2em;
+  &:hover, &:focus {
+    background-color: #ffffff;
+    border-color: #61388E;
+    color: #61388E;
+  }
+}
+
+.control-button {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  outline:none;
+}
+
+.page-select {
+  padding-top: 2em;
+}

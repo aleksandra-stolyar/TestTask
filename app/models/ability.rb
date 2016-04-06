@@ -5,9 +5,9 @@ class Ability
     alias_action :create, :read, :update, :destroy, :to => :crud
 
     if user
-      can :crud, Product
+      can [:crud, :paginate], Product
     else #change!!!!!
-      can :crud, :all
+      can :manage, :all
     end
     # Define abilities for the passed in user here. For example:
     #

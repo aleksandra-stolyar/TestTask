@@ -1,6 +1,10 @@
 var app = angular.module("spaTask", [
   'ui.router',
   'templates',
+  'ngFlash',
+  'ui.bootstrap',
+  'xeditable',
+  'angularUtils.directives.dirPagination',
   'Devise'
 ]);
 
@@ -8,8 +12,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
   $stateProvider
     .state('products', {
       url: '/products',
-      templateUrl: 'products/_products.html',
-      controller: 'ProductsController',
+      templateUrl: 'products/_main.html',
       // data: {
       //   requireLogin : true
       // },
@@ -24,5 +27,4 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
   $urlRouterProvider.otherwise('products');
 
 }]);
-
 

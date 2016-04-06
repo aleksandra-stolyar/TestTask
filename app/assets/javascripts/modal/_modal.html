@@ -1,0 +1,33 @@
+<div >
+  <div class="modal-header">
+    <h3 class="modal-title">Product: {{product.name}}</h3>
+  </div>
+
+  <form class="form-horizontal" ng-submit="ok(product)">
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="control-label col-md-2" for="inputName">Name</label>
+        <div class="col-md-10">
+          <input class="form-control" id="inputName" type="text" placeholder="Name" autofocus ng-model="product.name"></input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="inputPrice">Price</label>
+        <div class="col-md-3">
+          <input class="form-control currency" id="inputPrice" type="number" value="100" min="0" step="0.01" ng-model="product.price"></input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="inputDetails">Details</label>
+        <div class="col-md-10">
+          <textarea class="form-control" id="inputDetails" rows="5" placeholder="Something about this product..." ng-model="product.details"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn add-product" type="submit">Save</button>
+      <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

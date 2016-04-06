@@ -1,0 +1,38 @@
+<div class="row product-row">
+  <div class="container col-md-12">
+    <div class="col-md-5">  <!-- task-data -->
+      <span> {{productsCtrl.productIndex($index)}}.</span>
+      <input type="checkbox" style="margin: 0 .7em"> <!--  ng-checked="task.status === 'completed'" ng-click="setStatus(task)" -->
+      <span> {{product.name}} </span>
+    </div>
+    <div class="col-md-4 text-right deadline">
+      <span> {{product.price | currency}} </span> <!--class="task-deadline" -->
+    </div>
+    <div class="col-md-3 text-right">
+      <button class="control-button" ng-click="productsCtrl.update(product)">
+        <i class="fa fa-pencil"></i>
+      </button>
+      <button class="control-button" ng-click="goDetails = !goDetails">
+        <i class="fa fa-comments-o"></i>
+      </button>
+      <button class="control-button" ng-click="productsCtrl.delete(product)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </div>
+  </div>
+  <div class="container" ng-show="goDetails"> <!--comments-body -->
+    <div class="row">
+      <div class="col-md-10">
+        <div class="container" style="width:inherit">
+          <div class="row">
+            <div class="col-md-6">
+              <span><i class="fa fa-comment"></i></span>
+                <span> {{product.details}} </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  product:
+    create:
+      success: "New product successfully added!"
+      error: "Couldn't add new product. Try again."
+    update:
+      success: "Product updated."
+      error: "Couldn't update product."

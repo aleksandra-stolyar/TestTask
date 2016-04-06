@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root "application#angular"
 
-  resources :products
-
+  resources :products do
+    get '/:page/:quantity', to: 'products#paginate', on: :collection
+  end
   get "*path" => "application#angular"
 
   # Example of regular route:

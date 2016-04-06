@@ -15,6 +15,11 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require angular-bootstrap/ui-bootstrap-tpls.min.js
+//= require angular-flash-alert/dist/angular-flash.min.js
+//= require angular-xeditable
+//= require lodash/dist/lodash.core.min.js
+//= require angularUtils-pagination
 //= require AngularDevise
 
 //= require_tree .
