@@ -1,4 +1,4 @@
-app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', function(ProductsService, $scope, $uibModal){
+app.controller("ProductsController", ['ProductsService', 'Messages', '$scope', '$uibModal', function(ProductsService, Messages, $scope, $uibModal){
   var vm = this;
   vm.products = [];
 
@@ -48,15 +48,14 @@ app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', 
 
   vm.create = function() {
     $scope.product = {};
-    // openModal();
     openModal($scope.product).result.then(function(data) {
       ProductsService.create(data)
         .then(function successCallback(response) {
           vm.getPaginated(vm.defaultPage);
           vm.product = {};
-          // messages
+          Messages.success(response.data.message)
         }, function errorCallback(response) {
-          // messages
+          Messages.error(response.data.message)
         });
     });
   };
@@ -65,9 +64,7 @@ app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', 
     ProductsService.delete(product)
       .then(function successCallback(response) {
         vm.getPaginated(vm.defaultPage);
-        // messages
-      }, function errorCallback(response) {
-        // messages
+        Messages.warning(response.data.message)
       });
   };
 
@@ -75,9 +72,9 @@ app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', 
     openModal(product).result.then(function(data) {
       ProductsService.update(data)
         .then(function successCallback(response) {
-          // messages
+          Messages.warning(response.data.message);
         }, function errorCallback(response) {
-          // messages
+          Messages.error(response.data.message);
         });
     });
   };
@@ -103,9 +100,7 @@ app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', 
       ProductsService.deleteSelected(array)
         .then(function successCallback(response) {
           vm.getPaginated(vm.defaultPage);
-          //messages
-        }, function errorCallback (response) {
-          //messages
+          Messages.warning(response.data.message);
         });
     }
   };

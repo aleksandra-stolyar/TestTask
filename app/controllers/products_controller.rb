@@ -2,8 +2,6 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    # binding.pry
-    # @products = Product.page(params[:page]).per(8)
     render json: @products
   end
 
@@ -37,14 +35,13 @@ class ProductsController < ApplicationController
   end
 
   def delete_multiple
-    Product.where(id: params[:ids]).destroy_all
+    Product.where(id: params[:ids]).delete_all
     render json: {message: I18n.t('product.delete_multiple'), status: 200}
   end
 
   private
 
   def product_params
-    binding.pry
     params.permit(:name, :price, :details, :page, :quantity, ids: [])
   end
 end
