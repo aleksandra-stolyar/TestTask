@@ -82,4 +82,33 @@ app.controller("ProductsController", ['ProductsService', '$scope', '$uibModal', 
     });
   };
 
+
+  vm.selectedItemsArray = [];
+  vm.selectItem = function(product, checked) {
+    if (checked) {
+      vm.selectedItemsArray.push(product);
+    } else {
+      index = vm.selectedItemsArray.indexOf(product)
+      vm.selectedItemsArray.splice(index, 1);
+    };
+  };
+
+  vm.deleteSelected = function() {
+    var array = [];
+    vm.selectedItemsArray.forEach(function (product) {
+      array.push( product.id )
+    });
+
+    if (array.length > 0 ) {
+      ProductsService.deleteSelected(array)
+        .then(function successCallback(response) {
+          vm.getPaginated(vm.defaultPage);
+          //messages
+        }, function errorCallback (response) {
+          //messages
+        });
+    }
+  };
+
+
 }])

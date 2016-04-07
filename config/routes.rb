@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :products do
     get '/:page/:quantity', to: 'products#paginate', on: :collection
+    delete 'delete_multiple', on: :collection
   end
   get "*path" => "application#angular"
 

@@ -36,9 +36,15 @@ class ProductsController < ApplicationController
     render json: {message: I18n.t('product.destroy'), status: 200}
   end
 
+  def delete_multiple
+    Product.where(id: params[:ids]).destroy_all
+    render json: {message: I18n.t('product.delete_multiple'), status: 200}
+  end
+
   private
 
   def product_params
-    params.permit(:name, :price, :details, :page, :quantity)
+    binding.pry
+    params.permit(:name, :price, :details, :page, :quantity, ids: [])
   end
 end

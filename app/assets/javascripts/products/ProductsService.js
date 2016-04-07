@@ -11,8 +11,6 @@ app.service('ProductsService', ['$http', function($http) {
   };
 
   products.getPaginated = function(pageNumber, productsPerPage) {
-    // debugger
-    // products.products = [];
     return $http.get('products/' + pageNumber + '/' + productsPerPage)
   };
 
@@ -27,6 +25,10 @@ app.service('ProductsService', ['$http', function($http) {
   products.update = function(product) {
     return $http.patch('/products/' + product.id, {"name": product.name, "price": product.price, "details": product.details})
   };
+
+  products.deleteSelected = function(productsArray) {
+    return $http.delete('/products/delete_multiple', { params: {"ids[]": productsArray} })
+  }
 
   return products;
 }]);

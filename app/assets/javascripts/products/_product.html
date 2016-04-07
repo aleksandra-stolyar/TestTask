@@ -2,7 +2,7 @@
   <div class="container col-md-12">
     <div class="col-md-5">  <!-- task-data -->
       <span> {{productsCtrl.productIndex($index)}}.</span>
-      <input type="checkbox" style="margin: 0 .7em">
+      <input type="checkbox" style="margin: 0 .7em" ng-model="checked" ng-change="productsCtrl.selectItem(product, checked)">
       <span> {{product.name}} </span>
     </div>
     <div class="col-md-4 text-right deadline">

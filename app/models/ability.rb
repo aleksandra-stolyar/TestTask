@@ -5,7 +5,7 @@ class Ability
     alias_action :create, :read, :update, :destroy, :to => :crud
 
     if user
-      can [:crud, :paginate], Product
+      can [:crud, :paginate, :delete_multiple], Product
     else #change!!!!!
       can :manage, :all
     end

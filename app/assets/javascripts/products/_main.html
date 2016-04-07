@@ -1,25 +1,19 @@
 <div ng-controller="ProductsController as productsCtrl">
   <div class="row col-md-10 col-md-offset-1">
-    <div class="col-md-2">
-      <button type="button" class="btn btn-large add-product" ng-click="productsCtrl.selectAll()">
-        <i class="fa fa-check-square-o"></i>
-        Select all
-      </button>
-    </div>
     <div class="col-md-4">
-      <button type="button" class="btn btn-large add-product" ng-click="productsCtrl.deleteSelected()">
+      <button type="button" class="btn btn-large add-product" ng-model="productsCtrl.selectedItemsArray" ng-click="productsCtrl.deleteSelected()">
         <i class="fa fa-trash"></i>
         Delete selected
       </button>
     </div>
-    <div class="col-md-4 text-right">
+    <div class="col-md-6 text-right">
       <button type="button" class="btn btn-large add-product" ng-click="productsCtrl.create()">
         <i class="fa fa-plus"></i>
         New Product
       </button>
     </div>
     <div class="col-md-2 page-select">
-      <select class="form-control" id="sel1" ng-model="productsCtrl.itemsPerPage" ng-options="item for item in productsCtrl.itemsPerPage">
+      <select class="form-control" ng-model="productsCtrl.itemsPerPage" ng-options="item for item in productsCtrl.itemsPerPageArray">
         <option value="">-- items per page --</option>
       </select>
     </div>

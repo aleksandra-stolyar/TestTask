@@ -29,3 +29,4 @@ en:
       success: "Product updated."
       error: "Couldn't update product."
     destroy: "Product deleted."
+    delete_multiple: "Selected products deleted."
