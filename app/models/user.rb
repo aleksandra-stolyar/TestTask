@@ -6,13 +6,14 @@ class User < ActiveRecord::Base
 
   validates :email,
     presence: true,
-    format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i },
-    uniqueness: true,
-    case_sensitive: false
+    uniqueness: true
 
   validates :password,
     presence: true,
-    length: {in: 6..16},
     format: { with: /[a-zA-Z0-9]/ }, on: [:create, :update]
 
+
+  def self.search_by_email(email)
+    where('email LIKE ?', email)
+  end
 end

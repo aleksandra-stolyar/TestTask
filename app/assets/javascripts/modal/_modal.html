@@ -1,4 +1,4 @@
-<div >
+<div>
   <div class="modal-header">
     <h3 class="modal-title">Product: {{product.name}}</h3>
   </div>
@@ -20,7 +20,7 @@
         <div class="col-md-3">
           <input class="form-control currency" id="inputPrice" name="inputPrice" type="number" autocomplete="off" value="100" min="0" step="0.01" pattern="\d+(\.\d{2})?" ng-keypress="isNumberKey($event)" required ng-model="product.price"></input>
         </div>
-        <div class="message-block" ng-messages="productForm.inputName.$error" ng-show="productForm.inputPrice.$touched" role="alert">
+        <div class="message-block" ng-messages="productForm.inputPrice.$error" ng-show="productForm.inputPrice.$touched" role="alert">
           <p ng-message="required">Product must have a price.</p>
           <p ng-message="maxlength">This field can be at most 255 characters long.</p>
         </div>
@@ -30,7 +30,7 @@
         <div class="col-md-10">
           <textarea class="form-control" id="inputDetails" name="inputDetails" autocomplete="off" rows="3" placeholder="Something about this product..." maxlength="1000" required ng-model="product.details"></textarea>
         </div>
-        <div class="message-block" ng-messages="productForm.inputName.$error" ng-show="productForm.inputDetails.$touched" role="alert">
+        <div class="message-block" ng-messages="productForm.inputDetails.$error" ng-show="productForm.inputDetails.$touched" role="alert">
           <p ng-message="required">Please give some details about this product.</p>
           <p ng-message="maxlength">Description can be at most 1000 characters long.</p>
         </div>

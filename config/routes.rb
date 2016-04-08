@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations', sessions: "users/sessions" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -7,9 +8,14 @@ Rails.application.routes.draw do
   root "application#angular"
 
   resources :products do
-    get '/:page/:quantity', to: 'products#paginate', on: :collection
-    delete 'delete_multiple', on: :collection
+    collection do
+      get '/:page/:quantity', to: 'products#paginate'
+      delete 'delete_multiple'
+    end
   end
+
+  get 'user_search', to: 'application#user_search'
+
   get "*path" => "application#angular"
 
   # Example of regular route:

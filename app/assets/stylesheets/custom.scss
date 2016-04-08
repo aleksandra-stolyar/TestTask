@@ -44,7 +44,6 @@ product {
 
 .ng-dirty.ng-invalid {
   border-color: #EA5164;
-  // border-color: #FA787E;
 }
 
 .ng-dirty.ng-valid {
@@ -59,9 +58,14 @@ product {
 .message-block {
   display: block;
   color: #EA5164;
-  margin-left: 8.3em;
+  // margin-left: 8.3em;
   margin-top: 2.8em;
   margin-bottom: -.9em;
+
+  .auth & {
+    margin-top: .5em;
+    // margin-left: 0;
+  }
 }
 
 
