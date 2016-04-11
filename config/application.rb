@@ -33,7 +33,7 @@ module TestTask
     config.active_record.raise_in_transactional_callbacks = true
 
     # # Enable the asset pipeline
-    # config.assets.enabled = true
+    config.assets.enabled = true
 
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")

@@ -11,7 +11,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-
+  config.secret_key = 'b4ffeac83d9a806f270f80fd969499ad43c5f2efe3de96385f8ddc4e3802aae2ad322cfdf6e55057f60cf0d2ff62034768ff66b5ddd0a5a5e98f23cb84afe1f0'
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
