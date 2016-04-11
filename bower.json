@@ -26,6 +26,10 @@
     "angular-xeditable": "^0.1.11",
     "lodash": "^4.8.0",
     "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
-    "angular-messages": "^1.5.3"
+    "angular-messages": "^1.5.3",
+    "angular-input-masks": "^2.2.0"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
   }
 }

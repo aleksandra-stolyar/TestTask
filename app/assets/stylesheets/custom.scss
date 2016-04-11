@@ -50,9 +50,13 @@ product {
   border-color: #518B51;
 }
 
-.form-horizontal .control-label:after {
+.form-horizontal.auth .control-label:after {
   content: " *";
   color: red;
+}
+
+.password-form {
+  margin-top: 2em;
 }
 
 .message-block {

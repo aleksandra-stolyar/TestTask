@@ -10,7 +10,11 @@ class User < ActiveRecord::Base
 
   validates :password,
     presence: true,
-    format: { with: /[a-zA-Z0-9]/ }, on: [:create, :update]
+    format: { with: /[a-zA-Z0-9]/ }, on: :create
+
+  validates :password,
+    allow_blank: true,
+    format: { with: /[a-zA-Z0-9]/ }, on: :update
 
 
   def self.search_by_email(email)

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'users/registrations', sessions: "users/sessions" }
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -14,7 +14,12 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'user_search', to: 'application#user_search'
+  resource :profile, only: [:edit] do
+    collection do
+      patch 'update_password'
+      get 'user_search'
+    end
+  end
 
   get "*path" => "application#angular"
 

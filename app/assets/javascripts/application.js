@@ -22,5 +22,6 @@
 //= require angularUtils-pagination
 //= require angular-messages/angular-messages.min.js
 //= require AngularDevise
+//= require angular-input-masks/angular-input-masks-standalone.min.js
 
 //= require_tree .

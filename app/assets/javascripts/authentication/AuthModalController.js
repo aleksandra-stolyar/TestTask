@@ -16,7 +16,7 @@ app.controller('AuthModalController', ['$scope', '$uibModalInstance', 'Auth', 'A
 
   vm.signin = function() {
     Auth.login(vm.user).then(function(user) {
-      $uibModalInstance.close('ok');
+      $uibModalInstance.close(user);
     })
   };
 
