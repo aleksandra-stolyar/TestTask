@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include CanCan::ControllerAdditions
-  DeviseController.respond_to :json
+  # DeviseController.respond_to :json
 
   protect_from_forgery with: :exception
   skip_before_action :verify_authenticity_token

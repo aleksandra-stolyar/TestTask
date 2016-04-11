@@ -1,4 +1,6 @@
-class RegistrationsController < Devise::RegistrationsController
+class Users::RegistrationsController < Devise::RegistrationsController
+  respond_to :json
+
 
   def create
     super
