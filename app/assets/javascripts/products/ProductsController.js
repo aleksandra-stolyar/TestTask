@@ -11,6 +11,10 @@ app.controller("ProductsController", ['ProductsService', 'Messages', '$scope', '
     vm.currentPage = data;
   });
 
+  $scope.goDetails = function(item) {
+    $scope.detailsFor = item;
+  };
+
   vm.productIndex = function (index) {
     var newIndex;
     if (vm.currentPage != 1 ) {
