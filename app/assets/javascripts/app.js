@@ -12,8 +12,11 @@ var app = angular.module("spaTask", [
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
-  // $urlRouterProvider.otherwise('login');
-
+  $urlRouterProvider.otherwise(function($injector, $location){
+    $injector.invoke(['$state', function($state) {
+      $state.go('404');
+    }]);
+  });
   $stateProvider
     .state('products', {
       url: '/products',
@@ -51,7 +54,13 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
       data: {
         requireLogin : true
       }
-    });
+    })
+    .state('404', {
+      templateUrl: '/404.html',
+      data: {
+        requireLogin : false
+      }
+    })
 }]);
 
 // Intercept 401 Unauthorized everywhere
