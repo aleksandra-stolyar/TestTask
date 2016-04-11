@@ -1,9 +1,9 @@
-$fa-font-path: "font-awesome/fonts";
-$icon-font-path: 'bootstrap-sass/assets/fonts/bootstrap/';
-
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
 @import "font-awesome/scss/font-awesome.scss";
+
+$fa-font-path: "font-awesome/fonts";
+$icon-font-path: 'bootstrap-sass/assets/fonts/bootstrap/';
 
 .navbar-default {
   background-color: #ffffff;
