@@ -15,6 +15,7 @@
 //= require angular
 //= require angular-ui-router
 //= require angular-rails-templates
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require angular-bootstrap/ui-bootstrap-tpls.min.js
 //= require angular-flash-alert/dist/angular-flash.min.js
 //= require angular-xeditable
