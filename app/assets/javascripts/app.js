@@ -19,7 +19,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
   });
   $stateProvider
     .state('products', {
-      url: '/products',
+      url: '/',
       templateUrl: 'products/_main.html',
       data: {
         requireLogin : true
@@ -69,7 +69,6 @@ app.config(['AuthInterceptProvider', function (AuthInterceptProvider) {
 }]);
 
 app.run(['$rootScope', '$state', 'Auth', '$log', function ($rootScope, $state, Auth, $log) {
-  // $rootScope.state = $state;
 
   Auth.currentUser();
   $rootScope.$watch(
@@ -105,7 +104,7 @@ app.run(['$rootScope', '$state', 'Auth', '$log', function ($rootScope, $state, A
   });
 
 
-  $rootScope.$on('devise:unauthorized', function(event) {
+  $rootScope.$on('devise:unauthorized', function(event, xhr, deferred) {
     $state.go('login', 'User unauthorized');
   });
 

@@ -2,8 +2,6 @@
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
 @import "font-awesome/scss/font-awesome.scss";
 
-@import "font-awesome";
-
 $fa-font-path: "font-awesome/fonts";
 $icon-font-path: 'bootstrap-sass/assets/fonts/bootstrap/';
 
@@ -14,7 +12,6 @@ $icon-font-path: 'bootstrap-sass/assets/fonts/bootstrap/';
 
 product {
   display: block;
-  /* background-color: #F7FFFB; */
   margin-top: 1em;
   margin-bottom: 0;
   padding: .7em;
@@ -67,13 +64,11 @@ product {
 .message-block {
   display: block;
   color: #EA5164;
-  // margin-left: 8.3em;
   margin-top: 2.8em;
   margin-bottom: -.9em;
 
   .auth & {
     margin-top: .5em;
-    // margin-left: 0;
   }
 }
 

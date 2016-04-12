@@ -5,7 +5,7 @@ app.controller('AccountController', ['$scope', 'Auth', '$rootScope', 'AccountSer
   vm.editProfileData = function() {
     AccountService.edit(vm.user)
       .then(function(response) {
-        debugger
+        Messages.success(response.data.message);
       })
   };
 

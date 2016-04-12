@@ -1,34 +1,32 @@
 <div class="row product-row">
   <div class="container col-md-12">
-    <div class="col-md-5">  <!-- task-data -->
+    <div class="col-md-5">
       <span> {{productsCtrl.productIndex($index)}}.</span>
       <input type="checkbox" style="margin: 0 .7em" ng-model="checked" ng-change="productsCtrl.selectItem(product, checked)">
       <span> {{product.name}} </span>
     </div>
     <div class="col-md-4 text-right">
-      <span> {{product.price | currency}} </span> <!--class="task-deadline" -->
+      <span> {{product.price | currency}} </span>
     </div>
     <div class="col-md-3 text-right">
       <button class="control-button" ng-click="productsCtrl.update(product)">
         <i class="fa fa-pencil"></i>
       </button>
       <button class="control-button" ng-click="goDetails(product)">
-        <i class="fa fa-comments-o"></i>
+        <i class="fa fa-info"></i>
       </button>
       <button class="control-button" ng-click="productsCtrl.delete(product)">
         <i class="fa fa-trash"></i>
       </button>
     </div>
   </div>
-  <div class="container" ng-show="detailsFor==(product)"> <!--comments-body -->
+  <div class="container" ng-show="detailsFor==(product)">
     <div class="row">
       <div class="col-md-10">
         <div class="container" style="width:inherit">
           <div class="row">
             <div class="col-md-6">
-              <span><i class="fa fa-comment"></i></span>
-                <span> {{product.details}} </span>
-              </span>
+              <span> {{product.details}} </span>
             </div>
           </div>
         </div>
